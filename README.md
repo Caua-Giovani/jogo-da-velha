@@ -46,7 +46,7 @@ Refatorar o projeto **Jogo da Velha** desenvolvido no tutorial oficial do React,
 
 1. **Clonar o repositório:**
    ```bash
-   git clone https://github.com/Caua-Giovani/jogo-da-velha
+   git clone https://github.com/Caua-Giovani/jogo-da-velha.git
    ```
 2. **Acessar a pasta do projeto:**
    ```bash
