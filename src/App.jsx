@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import Game from './components/baseCode/codigoReact';
+import Game from "./components/Game/Game";
 
 function App() {
   return (
@@ -7,4 +6,6 @@ function App() {
       <Game/>
     </>
   )
-}
+};
+
+export default App;
