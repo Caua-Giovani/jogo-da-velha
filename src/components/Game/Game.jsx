@@ -21,7 +21,7 @@ function Game() {
         const movimentos = historico.map((quadrados ,movimento) =>{
             let descricao;
             if (movimento > 0){
-                descricao = 'Ir para movimento ' + movimento + 'º';
+                descricao = 'Ir para o ' + movimento + 'º movimento';
             } else {
                 descricao = 'Ir para o começo.';
             }
