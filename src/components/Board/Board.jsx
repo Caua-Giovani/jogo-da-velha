@@ -1,26 +1,9 @@
 import styles from './board.module.css'
 import Square from '../Square/Square'
 import { calcularVencedor } from '../../utils/logicaJogo';
-import { useState } from 'react';
 
 function Board({xProximo, quadrados, naJogada}) {
-    const [placar, setPlacar] = useState({ x: 0, o: 0, empates: 0 });
-
-    function atualizarPlacar(calcularVencedor) {
-                setPlacar((placarAtual) => {
-                    if (resultado === 'X') {
-                    return { ...placarAtual, x: placarAtual.x + 1 };
-                    }
-                    if (resultado === 'O') {
-                    return { ...placarAtual, o: placarAtual.o + 1 };
-                    }
-                    if (resultado === 'empate') {
-                    return { ...placarAtual, empates: placarAtual.empates + 1 };
-                    }
-                    return placarAtual;
-                });
-                }
-
+    
     function clickSquare(i){
         console.log(calcularVencedor(quadrados))
         if (calcularVencedor(quadrados) || quadrados[i]){
@@ -41,10 +24,8 @@ function Board({xProximo, quadrados, naJogada}) {
     let status;
     if (vencedor === 'X' || vencedor ==='O') {
         status = 'Vencedor: ' + vencedor;
-        atualizarPlacar()
     } if(vencedor === 'Empate'){
         status = 'Empate!'
-        atualizarPlacar()
     } else {
         status = 'Proximo jogador: ' + (xProximo ? 'X' : 'O');
     }
