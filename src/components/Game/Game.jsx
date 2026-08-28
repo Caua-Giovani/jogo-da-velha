@@ -45,9 +45,9 @@ function Game() {
         const movimentos = historico.map((quadrados ,movimento) =>{
             let descricao;
             if (movimento > 0){
-                descricao = 'Ir para o ' + movimento + 'º movimento';
+                descricao = 'Movimento #' + movimento ;
             } else {
-                descricao = 'Ir para o começo.';
+                descricao = 'Inicio do Jogo';
             }
             return (
                 <li key={movimento}>
@@ -66,7 +66,8 @@ function Game() {
                 </div>
                 <div className={styles.gameInfo}>
                     <Placar placar={placar}/>
-                    <ol>{movimentos}</ol>
+                    <h1>HISTÓRICO</h1>
+                    <ol className={styles.lista}>{movimentos}</ol>
                 </div>
                 
             </div>

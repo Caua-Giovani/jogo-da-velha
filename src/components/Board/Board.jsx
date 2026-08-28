@@ -24,7 +24,7 @@ function Board({xProximo, quadrados, naJogada}) {
     let status;
     if (vencedor === 'X' || vencedor ==='O') {
         status = 'Vencedor: ' + vencedor;
-    } if(vencedor === 'Empate'){
+    } else if(vencedor === 'Empate'){
         status = 'Empate!'
     } else {
         status = 'Proximo jogador: ' + (xProximo ? 'X' : 'O');
