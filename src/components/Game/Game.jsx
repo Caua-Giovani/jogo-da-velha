@@ -7,6 +7,7 @@ function Game() {
     const [jogadaAtual, setJogadaAtual] = useState(0);
     const xProximo = jogadaAtual % 2 === 0;
     const tabAtual = historico[jogadaAtual]
+    
 
     function handlePlay(proxQuadrado){
         const proxHistorico = [...historico.slice(0,jogadaAtual + 1),proxQuadrado];
@@ -31,6 +32,8 @@ function Game() {
                 </li>
             );
         });
+
+        
     
     return(
         <>

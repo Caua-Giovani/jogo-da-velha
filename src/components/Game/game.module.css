@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(78, 78, 78);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.game{
+    background-color: gray;
+    padding: 70px;
+    border-radius: 20px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

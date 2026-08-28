@@ -1,9 +1,28 @@
 import styles from './board.module.css'
 import Square from '../Square/Square'
 import { calcularVencedor } from '../../utils/logicaJogo';
+import { useState } from 'react';
 
 function Board({xProximo, quadrados, naJogada}) {
+    const [placar, setPlacar] = useState({ x: 0, o: 0, empates: 0 });
+
+    function atualizarPlacar(calcularVencedor) {
+                setPlacar((placarAtual) => {
+                    if (resultado === 'X') {
+                    return { ...placarAtual, x: placarAtual.x + 1 };
+                    }
+                    if (resultado === 'O') {
+                    return { ...placarAtual, o: placarAtual.o + 1 };
+                    }
+                    if (resultado === 'empate') {
+                    return { ...placarAtual, empates: placarAtual.empates + 1 };
+                    }
+                    return placarAtual;
+                });
+                }
+
     function clickSquare(i){
+        console.log(calcularVencedor(quadrados))
         if (calcularVencedor(quadrados) || quadrados[i]){
             return;
         }
@@ -20,8 +39,12 @@ function Board({xProximo, quadrados, naJogada}) {
 
     const vencedor = calcularVencedor(quadrados)
     let status;
-    if (vencedor) {
+    if (vencedor === 'X' || vencedor ==='O') {
         status = 'Vencedor: ' + vencedor;
+        atualizarPlacar()
+    } if(vencedor === 'Empate'){
+        status = 'Empate!'
+        atualizarPlacar()
     } else {
         status = 'Proximo jogador: ' + (xProximo ? 'X' : 'O');
     }
@@ -30,21 +53,15 @@ function Board({xProximo, quadrados, naJogada}) {
         <>
             <h1 className={styles.status}>{status}</h1>
             <div className={styles.tabuleiro}>
-                <div className="linhaTabuleiro">
-                    <Square valor={quadrados[0]} funcaoQuadrado={clickSquare(0)}/>
-                    <Square valor={quadrados[1]} funcaoQuadrado={clickSquare(1)}/>
-                    <Square valor={quadrados[2]} funcaoQuadrado={clickSquare(2)}/>
-                </div>
-                <div className="linhaTabuleiro">
-                    <Square valor={quadrados[3]} funcaoQuadrado={clickSquare(3)}/>
-                    <Square valor={quadrados[4]} funcaoQuadrado={clickSquare(4)}/>
-                    <Square valor={quadrados[5]} funcaoQuadrado={clickSquare(5)}/>
-                </div>
-                <div className="linhaTabuleiro">
-                    <Square valor={quadrados[6]} funcaoQuadrado={clickSquare(6)}/>
-                    <Square valor={quadrados[7]} funcaoQuadrado={clickSquare(7)}/>
-                    <Square valor={quadrados[8]} funcaoQuadrado={clickSquare(8)}/>
-                </div>
+                    <Square valor={quadrados[0]} funcaoQuadrado={() => clickSquare(0)}/>
+                    <Square valor={quadrados[1]} funcaoQuadrado={() => clickSquare(1)}/>
+                    <Square valor={quadrados[2]} funcaoQuadrado={() => clickSquare(2)}/>
+                    <Square valor={quadrados[3]} funcaoQuadrado={() => clickSquare(3)}/>
+                    <Square valor={quadrados[4]} funcaoQuadrado={() => clickSquare(4)}/>
+                    <Square valor={quadrados[5]} funcaoQuadrado={() => clickSquare(5)}/>
+                    <Square valor={quadrados[6]} funcaoQuadrado={() => clickSquare(6)}/>
+                    <Square valor={quadrados[7]} funcaoQuadrado={() => clickSquare(7)}/>
+                    <Square valor={quadrados[8]} funcaoQuadrado={() => clickSquare(8)}/>
             </div>
         </>
     )
