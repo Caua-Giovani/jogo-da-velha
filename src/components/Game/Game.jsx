@@ -67,7 +67,7 @@ function Game() {
                 <div className={styles.gameInfo}>
                     <Placar placar={placar}/>
                     <h1>HISTÓRICO</h1>
-                    <ol className={styles.lista}>{movimentos}</ol>
+                    <ul className={styles.lista}>{movimentos}</ul>
                 </div>
                 
             </div>

@@ -27,12 +27,13 @@ function Board({xProximo, quadrados, naJogada}) {
     } else if(vencedor === 'Empate'){
         status = 'Empate!'
     } else {
-        status = 'Proximo jogador: ' + (xProximo ? 'X' : 'O');
+        status = 'Vez de: ' + (xProximo ? 'X' : 'O');
     }
 
     return(
         <>
-            <h1 className={styles.status}>{status}</h1>
+            <h1 className={styles.titulo}>Jogo da Velha</h1>
+            <h2 className={styles.status}>{status}</h2>
             <div className={styles.tabuleiro}>
                     <Square valor={quadrados[0]} funcaoQuadrado={() => clickSquare(0)}/>
                     <Square valor={quadrados[1]} funcaoQuadrado={() => clickSquare(1)}/>
