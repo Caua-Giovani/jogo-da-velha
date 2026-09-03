@@ -10,6 +10,11 @@ function Game() {
     const xProximo = jogadaAtual % 2 === 0;
     const tabAtual = historico[jogadaAtual]
     const [placar, setPlacar] = useState({ x: 0, o: 0, empates: 0 });
+
+    function reiniciarPartida(){
+        setHistorico([Array(9).fill(null)])
+        setJogadaAtual(0)
+    }
     
     function atualizarPlacar(resultado) {
         const novoPlacar = {...placar}
@@ -63,6 +68,7 @@ function Game() {
             <div className={styles.game}>
                 <div className={styles.gameBoard}>
                     <Board xProximo={xProximo} quadrados={tabAtual} naJogada={handlePlay}/>
+                    <button onClick={reiniciarPartida} className={styles.btnReini}>Reiniciar Partida</button>
                 </div>
                 <div className={styles.gameInfo}>
                     <Placar placar={placar}/>

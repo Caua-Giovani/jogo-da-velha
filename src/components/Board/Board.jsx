@@ -1,6 +1,7 @@
 import styles from './board.module.css'
 import Square from '../Square/Square'
 import { calcularVencedor } from '../../utils/logicaJogo';
+import { exibirAlertaResultado, exibirAlertaVelha } from '../../utils/alertas';
 
 function Board({xProximo, quadrados, naJogada}) {
     
@@ -24,8 +25,10 @@ function Board({xProximo, quadrados, naJogada}) {
     let status;
     if (vencedor === 'X' || vencedor ==='O') {
         status = 'Vencedor: ' + vencedor;
+        exibirAlertaResultado("Parabens!",`O jogador ${vencedor} venceu a partida!!`)
     } else if(vencedor === 'Empate'){
         status = 'Empate!'
+        exibirAlertaVelha()
     } else {
         status = 'Vez de: ' + (xProximo ? 'X' : 'O');
     }
