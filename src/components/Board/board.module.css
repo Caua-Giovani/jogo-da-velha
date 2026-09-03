@@ -1,19 +1,19 @@
-.tabuleiro{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
-    grid-gap: 15px;
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
 }
 
-.titulo{
-    margin: 0 ;
-    color: white;
+.titulo {
+  margin: 0;
+  color: var(--color-text-white);
 }
 
-.status{
-    margin-bottom: 18px;
-    color: rgb(233, 69, 96);
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+.status {
+  margin-bottom: 18px;
+  color: var(--color-primary);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }

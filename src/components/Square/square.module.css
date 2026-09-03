@@ -1,14 +1,15 @@
-.square{
-    background: rgb(15, 52, 96);
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 34px;
-    font-weight: 800;
-    height: 68px;
-    width: 68px;
-    padding: 0px;
-    text-align: center;
-    cursor: pointer;
-    color: rgb(234, 234, 234);
-    border: 1.5px solid rgb(46, 65, 88);
+.square {
+  background: var(--color-bg-square);
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 34px;
+  font-weight: 800;
+  height: 68px;
+  width: 68px;
+  padding: 0px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-text-square);
+  border: 1.5px solid var(--color-border-square);
+  transition: 0.3s ease;
 }

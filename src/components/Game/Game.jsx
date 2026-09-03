@@ -10,6 +10,17 @@ function Game() {
     const xProximo = jogadaAtual % 2 === 0;
     const tabAtual = historico[jogadaAtual]
     const [placar, setPlacar] = useState({ x: 0, o: 0, empates: 0 });
+    const [tema, setTema] = useState("dark");
+
+    const alternarTema = () => {
+        if (tema==="dark") {
+        document.body.classList.add('tema-claro');
+        setTema('light')
+        } else {
+        document.body.classList.remove('tema-claro');
+        setTema('dark')
+        }
+    };
 
     function reiniciarPartida(){
         setHistorico([Array(9).fill(null)])
@@ -76,6 +87,7 @@ function Game() {
                 </div>
                 
             </div>
+            <button className={styles.btnThemeToggle} onClick={alternarTema}>{tema==='dark' ? '☀️' : '🌙 '}</button>
         </>
     )
 }

@@ -1,0 +1,34 @@
+:root {
+  --color-bg-body: #1a1a2e;
+  --color-bg-card: #16213e;
+  --color-bg-square: #0f3460;
+  
+  --color-primary: #e94560;
+  --color-primary-alpha: rgba(233, 69, 96, 0.15);
+  
+  --color-text-white: #ffffff;
+  --color-text-muted: #9a9ab5;
+  --color-text-square: #eaeaea;
+  
+  --color-border-square: #2e4158;
+  
+  --shadow-card: rgba(0, 0, 0, 0.5) 0px 20px 60px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+}
+
+
+body.tema-claro {
+  --color-bg-body: #eef2f7;
+  --color-bg-card: #ffffff;
+  --color-bg-square: #dbe4f0;
+  
+  --color-primary: #e94560;
+  --color-primary-alpha: rgba(233, 69, 96, 0.12);
+  
+  --color-text-white: #1a1a2e;  /* Invertido para leitura em fundos claros */
+  --color-text-muted: #5a627a;  /* Tom escuro suavizado para rótulos */
+  --color-text-square: #0f3460; /* Cor contrastante para os X e O */
+  
+  --color-border-square: #bccadc;
+  
+  --shadow-card: rgba(0, 0, 0, 0.08) 0px 10px 30px, rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
+}

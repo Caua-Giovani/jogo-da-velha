@@ -1,17 +1,17 @@
-.placar h1{
-    color: #9a9ab5;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0 0 10px 0;
+.placar h1 {
+  color: var(--color-text-muted);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
 }
 
-.placar p{
-    margin-bottom: 18px;
-    color: rgb(233, 69, 96);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
+.placar p {
+  margin-bottom: 18px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
