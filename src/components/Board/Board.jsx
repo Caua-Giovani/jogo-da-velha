@@ -24,13 +24,14 @@ function Board({xProximo, quadrados, naJogada, funcJogNov}) {
     let status;
     if (vencedor === 'X' || vencedor ==='O') {
         status = 'Vencedor: ' + vencedor;
-        exibirAlertaResultado("Parabens!",`O jogador ${vencedor} venceu a partida!!`,funcJogNov)
+        exibirAlertaResultado("Parabens!",`O jogador ${vencedor} venceu a rodada!!`,funcJogNov)
     } else if(vencedor === 'Empate'){
         status = 'Empate!'
         exibirAlertaVelha(funcJogNov)
     } else {
-        status = 'Vez de: ' + (xProximo ? 'X' : 'O');
+        status = 'Vez do jogador: ' + (xProximo ? 'X' : 'O');
     }
+
 
     return(
         <>

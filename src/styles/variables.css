@@ -24,9 +24,9 @@ body.tema-claro {
   --color-primary: #e94560;
   --color-primary-alpha: rgba(233, 69, 96, 0.12);
   
-  --color-text-white: #1a1a2e;  /* Invertido para leitura em fundos claros */
-  --color-text-muted: #5a627a;  /* Tom escuro suavizado para rótulos */
-  --color-text-square: #0f3460; /* Cor contrastante para os X e O */
+  --color-text-white: #1a1a2e;
+  --color-text-muted: #5a627a;
+  --color-text-square: #0f3460;
   
   --color-border-square: #bccadc;
   

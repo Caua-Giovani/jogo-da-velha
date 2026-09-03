@@ -1,4 +1,5 @@
 
+
 body {
   background-color: var(--color-bg-body);
   display: flex;
@@ -118,6 +119,10 @@ ul {
     box-shadow: var(--shadow-card);
     width: 300px;
     justify-content: center;
-    height: 800px;
+    height: 850px;
+    margin-top: 70px;
+  }
+  .btnThemeToggle{
+    margin-top: 70px;
   }
 }

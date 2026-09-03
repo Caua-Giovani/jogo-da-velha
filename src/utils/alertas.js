@@ -27,7 +27,6 @@ export const exibirAlertaVelha = (funcao) => {
   Swal.fire({
     title: 'Deu Velha!',
     imageUrl: 'https://media.tenor.com/_fFhuqzbi1sAAAAj/cobbler.gif',
-    imageAlt: 'GIF de velha',
     confirmButtonText: 'Continuar',
     showDenyButton: true,
     denyButtonText: 'Jogar Novamente',
