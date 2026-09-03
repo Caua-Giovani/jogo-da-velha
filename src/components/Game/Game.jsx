@@ -26,7 +26,6 @@ function Game() {
             novoPlacar.empates = novoPlacar.empates + 1;
         }
         setPlacar(novoPlacar)
-        console.log(novoPlacar)
     }
 
     
@@ -67,7 +66,7 @@ function Game() {
         <>
             <div className={styles.game}>
                 <div className={styles.gameBoard}>
-                    <Board xProximo={xProximo} quadrados={tabAtual} naJogada={handlePlay}/>
+                    <Board xProximo={xProximo} quadrados={tabAtual} naJogada={handlePlay} funcJogNov={reiniciarPartida}/>
                     <button onClick={reiniciarPartida} className={styles.btnReini}>Reiniciar Partida</button>
                 </div>
                 <div className={styles.gameInfo}>
