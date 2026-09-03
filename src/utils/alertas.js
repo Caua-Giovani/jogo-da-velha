@@ -6,6 +6,7 @@ export const exibirAlertaResultado = (titulo, mensagem,funcao) => {
     title: titulo,
     text: mensagem,
     background: 'rgb(22, 33, 62)',
+    icon: 'success',
     color: 'white',
     confirmButtonText: 'Continuar',
     showDenyButton: true,
