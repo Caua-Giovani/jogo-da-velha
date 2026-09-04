@@ -83,7 +83,15 @@ export const exibirAlertaFimDePartida = (titulo,mensagem,funcao) => {
       confirmButton: styles.btnConfirmSweet,
       denyButton: styles.btnConfirmSweet2
     },
-    heightAuto: false
+    heightAuto: false,
+    didOpen: () => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        zIndex: 9999 
+      });
+    }
   }).then((result) => {
     if (result.isDenied) {
       funcao();
