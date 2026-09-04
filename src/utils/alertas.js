@@ -8,11 +8,11 @@ export const exibirAlertaResultado = (titulo, mensagem, funcao) => {
     icon: 'success',
     confirmButtonText: 'Continuar',
     showDenyButton: true,
-    denyButtonText: 'Jogar Novamente',
+    denyButtonText: 'Proxima Rodada',
     buttonsStyling: false,
     customClass: {
       popup: styles.popupSweet,
-      confirmButton: styles.btnConfimSweet,
+      confirmButton: styles.btnConfirmSweet,
       denyButton: styles.btnCancelSweet
     },
     heightAuto: false
@@ -29,13 +29,59 @@ export const exibirAlertaVelha = (funcao) => {
     imageUrl: 'https://media.tenor.com/_fFhuqzbi1sAAAAj/cobbler.gif',
     confirmButtonText: 'Continuar',
     showDenyButton: true,
+    denyButtonText: 'Proxima Rodada',
+    buttonsStyling: false,
+    customClass: {
+      popup: styles.popupSweet,
+      title: styles.tituloVelha,
+      confirmButton: styles.btnConfirmSweet,
+      denyButton: styles.btnCancelSweet
+    },
+    heightAuto: false
+  }).then((result) => {
+    if (result.isDenied) {
+      funcao();
+    }
+  });
+};
+
+
+export const exibirAlertaReinicio = (funcao) => {
+  Swal.fire({
+    title: 'Certeza que deseja reinciar?',
+    text: 'Isso irá reiniciar todo o placar e a partida!',
+    confirmButtonText: 'Não Reiniciar',
+    showDenyButton: true,
+    denyButtonText: 'Reiniciar',
+    buttonsStyling: false,
+    customClass: {
+      popup: styles.popupSweet,
+      title: styles.tituloVelha,
+      confirmButton: styles.btnConfirmSweet,
+      denyButton: styles.btnConfirmSweet
+    },
+    heightAuto: false
+  }).then((result) => {
+    if (result.isDenied) {
+      funcao();
+    }
+  });
+};
+
+
+export const exibirAlertaFimDePartida = (titulo,mensagem,funcao) => {
+  Swal.fire({
+    title: titulo,
+    text: mensagem,
+    confirmButtonText: 'Continuar',
+    showDenyButton: true,
     denyButtonText: 'Jogar Novamente',
     buttonsStyling: false,
     customClass: {
       popup: styles.popupSweet,
       title: styles.tituloVelha,
-      confirmButton: styles.btnConfimSweet,
-      denyButton: styles.btnCancelSweet
+      confirmButton: styles.btnConfirmSweet,
+      denyButton: styles.btnConfirmSweet2
     },
     heightAuto: false
   }).then((result) => {

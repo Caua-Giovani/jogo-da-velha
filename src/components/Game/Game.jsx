@@ -1,8 +1,10 @@
 import styles from './game.module.css'
 import Board from '../Board/Board'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { calcularVencedor } from '../../utils/logicaJogo';
 import Placar from '../Placar/Placar';
+import { exibirAlertaReinicio } from '../../utils/alertas';
+import { exibirAlertaFimDePartida } from '../../utils/alertas';
 
 function Game() {
     const [historico, setHistorico] = useState([Array(9).fill(null)]);
@@ -22,9 +24,15 @@ function Game() {
         }
     };
 
+    function reiniciarRodada(){
+        setHistorico([Array(9).fill(null)])
+        setJogadaAtual(0)
+    }
+
     function reiniciarPartida(){
         setHistorico([Array(9).fill(null)])
         setJogadaAtual(0)
+        setPlacar({ x: 0, o: 0, empates: 0 })
     }
     
     function atualizarPlacar(resultado) {
@@ -37,8 +45,17 @@ function Game() {
             novoPlacar.empates = novoPlacar.empates + 1;
         }
         setPlacar(novoPlacar)
+        
     }
-
+    useEffect(() =>{
+        if (placar.x === 3){
+            exibirAlertaFimDePartida("Parabens X!","O jogador X venceu a partida!!",reiniciarPartida())
+        } else if (placar.o === 3){
+            exibirAlertaFimDePartida("Parabens O!","O jogador O venceu a partida!!",reiniciarPartida())
+        } else {
+            return
+        }
+    }, [placar])
     
 
     function handlePlay(proxQuadrado){
@@ -71,14 +88,17 @@ function Game() {
             );
         });
 
+        function reiniciar(){
+            exibirAlertaReinicio(reiniciarPartida)
+        }
         
     
     return(
         <>
             <div className={styles.game}>
                 <div className={styles.gameBoard}>
-                    <Board xProximo={xProximo} quadrados={tabAtual} naJogada={handlePlay} funcJogNov={reiniciarPartida}/>
-                    <button onClick={reiniciarPartida} className={styles.btnReini}>Reiniciar Partida</button>
+                    <Board xProximo={xProximo} quadrados={tabAtual} naJogada={handlePlay} funcJogNov={reiniciarRodada   }/>
+                    <button onClick={reiniciar} className={styles.btnReini}>Reiniciar Partida</button>
                 </div>
                 <div className={styles.gameInfo}>
                     <Placar placar={placar}/>
@@ -87,7 +107,7 @@ function Game() {
                 </div>
                 
             </div>
-            <button className={styles.btnThemeToggle} onClick={alternarTema}>{tema==='dark' ? '☀️' : '🌙 '}</button>
+            <button className={styles.btnThemeToggle} onClick={alternarTema}>{tema==='dark' ? '☀️ Tema Claro' : '🌙 Tema Escuro'}</button>
         </>
     )
 }

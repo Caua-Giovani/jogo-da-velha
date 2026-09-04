@@ -14,9 +14,11 @@ body {
     border: none;
     box-shadow: var(--shadow-card);
     background-color: var(--color-bg-card);
+    color: var(--color-text-white);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     border-radius: 50px;
-    padding: 15px;
-    font-size: 30px;
+    padding: 0px 15px;
+    font-size: 20px;
     height: 70px;
     margin: 15px;
     transition: 0.3s ease;
@@ -24,6 +26,7 @@ body {
 
 .btnThemeToggle:hover{
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 .game {
@@ -120,9 +123,7 @@ ul {
     width: 300px;
     justify-content: center;
     height: 850px;
-    margin-top: 70px;
-  }
-  .btnThemeToggle{
-    margin-top: 70px;
+    margin-top: 200px;
+    padding-top: 60px;
   }
 }
