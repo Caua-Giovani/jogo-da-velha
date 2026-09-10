@@ -1,7 +1,8 @@
 import styles from './board.module.css'
 import Square from '../Square/Square'
-import { calcularVencedor } from '../../utils/logicaJogo';
-import { exibirAlertaResultado, exibirAlertaVelha } from '../../utils/alertas';
+import { calcularVencedor } from '../../utils/logicaJogo'
+import { exibirAlertaResultado, exibirAlertaVelha } from '../../utils/alertas'
+import { useState, useEffect } from 'react'
 
 function Board({xProximo, quadrados, naJogada, funcJogNov}) {
     
@@ -22,16 +23,17 @@ function Board({xProximo, quadrados, naJogada, funcJogNov}) {
 
     const vencedor = calcularVencedor(quadrados)
     let status;
-    if (vencedor === 'X' || vencedor ==='O') {
-        status = 'Vencedor: ' + vencedor;
-        exibirAlertaResultado("Parabens!",`O jogador ${vencedor} venceu a rodada!!`,funcJogNov)
-    } else if(vencedor === 'Empate'){
-        status = 'Empate!'
-        exibirAlertaVelha(funcJogNov)
-    } else {
-        status = 'Vez do jogador: ' + (xProximo ? 'X' : 'O');
-    }
-
+    useEffect(() =>{
+        if (vencedor === 'X' || vencedor ==='O') {
+            status = 'Vencedor: ' + vencedor;
+            exibirAlertaResultado("Parabéns!",`O jogador ${vencedor} venceu a rodada!!`,funcJogNov)
+        } else if(vencedor === 'Empate'){
+            status = 'Empate!'
+            exibirAlertaVelha(funcJogNov)
+        } else {
+            status = 'Vez do jogador: ' + (xProximo ? 'X' : 'O');
+        }
+    }, [vencedor])
 
     return(
         <>

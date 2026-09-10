@@ -49,9 +49,9 @@ function Game() {
     }
     useEffect(() =>{
         if (placar.x === 3){
-            exibirAlertaFimDePartida("Parabens X!","O jogador X venceu a partida!!",reiniciarPartida())
+            exibirAlertaFimDePartida("Parabéns X!","O jogador X venceu a partida!!",reiniciarPartida())
         } else if (placar.o === 3){
-            exibirAlertaFimDePartida("Parabens O!","O jogador O venceu a partida!!",reiniciarPartida())
+            exibirAlertaFimDePartida("Parabéns O!","O jogador O venceu a partida!!",reiniciarPartida())
         } else {
             return
         }

@@ -86,8 +86,8 @@ export const exibirAlertaFimDePartida = (titulo,mensagem,funcao) => {
     heightAuto: false,
     didOpen: () => {
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 200,
+        spread: 100,
         origin: { y: 0.6 },
         zIndex: 9999 
       });
